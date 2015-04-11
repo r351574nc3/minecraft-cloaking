@@ -1,4 +1,4 @@
-package com.github.quorawr.minecraft;
+package com.github.avatarkorra.minecraft;
 
 import com.firebase.client.Firebase;
 import org.bukkit.command.Command;
