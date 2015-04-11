@@ -44,4 +44,29 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
+  <build>
+     <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>unpack-dependencies</id>
+            <phase>package</phase>
+            <goals>
+              <goal>unpack-dependencies</goal>
+            </goals>
+            <configuration>
+              <includes>**/*.class</includes>
+              <excludes>**/*.properties</excludes>
+              <outputDirectory>${project.build.directory}/classes</outputDirectory>
+              <overWriteReleases>false</overWriteReleases>
+              <overWriteSnapshots>true</overWriteSnapshots>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
 </project>
