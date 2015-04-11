@@ -1,0 +1,10 @@
+name: King of Cloa
+
+author: Leilia Faith
+website: http://www.github.com/avatarkorra/minecraft-cloaking
+main: com.github.avatarkorra.minecraft.KingOfCloaPlugin
+commands: 
+    hello:
+        description: Say hello to everyone
+        usage: /hello [optionalmessage]
+version: 0.1
