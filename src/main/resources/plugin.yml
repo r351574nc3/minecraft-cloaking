@@ -11,4 +11,19 @@ commands:
         usage: |
                /<command> <name> [player]
                Example: /<command> blah
+    teleport:
+        description: Teleport yourself
+        usage: |
+               /<command> <lat> <lng>
+               Example: /<command> 32.25164 -111.01884
+    launch:
+        description: Launch someone
+        usage: |
+               /<command> [player]
+               Example: /<command> r351574nc3
+    lightarrow:
+        description: Strike arrow with lightning
+        usage: |
+               /<command>
+               
 version: 0.1
