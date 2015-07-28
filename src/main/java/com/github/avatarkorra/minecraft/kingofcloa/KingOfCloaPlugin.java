@@ -1,10 +1,13 @@
-package com.github.avatarkorra.minecraft;
+package com.github.avatarkorra.minecraft.kingofcloa;
 
 import com.firebase.client.Firebase;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import com.github.avatarkorra.minecraft.kingofcloa.commands.CloakExecutor;
+import com.github.avatarkorra.minecraft.kingofcloa.commands.LocationExecutor;
 
 
 /**
@@ -13,6 +16,9 @@ import org.bukkit.plugin.java.JavaPlugin;
  */
 public class KingOfCloaPlugin extends JavaPlugin {
     final Firebase fb;
+
+    static final String LOCATION_COMMAND = "location";
+    static final String CLOAK_COMMAND    = "cloak";
 
     public KingOfCloaPlugin() {
         fb = new Firebase("https://kingofcloa.firebaseio.com");
@@ -28,18 +34,8 @@ public class KingOfCloaPlugin extends JavaPlugin {
     }
     
     public void onEnable() {
+        getCommand(LOCATION_COMMAND).setExecutor(new LocationExecutor(this));
+        getCommand(CLOAK_COMMAND).setExecutor(new CloakExecutor(this));
     }
 
-    public boolean onCommand(final CommandSender sender, 
-    						 final Command command,
-    						 final String label,
-    						 final String ... args) {
-
-        if (label.toLowerCase().indexOf("hello") > -1) {
-            final String message = "Hello";
-            getServer().broadcastMessage(message);
-            return true;
-        }
-        return false;
-    }
 }

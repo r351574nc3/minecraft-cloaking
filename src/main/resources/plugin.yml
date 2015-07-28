@@ -1,10 +1,14 @@
 name: King of Cloa
-
 author: Leilia Faith
 website: http://www.github.com/avatarkorra/minecraft-cloaking
-main: com.github.avatarkorra.minecraft.KingOfCloaPlugin
+main: com.github.avatarkorra.minecraft.kingofcloa.KingOfCloaPlugin
 commands: 
-    hello:
-        description: Say hello to everyone
-        usage: /hello [optionalmessage]
+    cloak:
+        description: Cloak yourself
+        usage: /cloak
+    location:
+        description: stuff with locations
+        usage: |
+               /<command> <name> [player]
+               Example: /<command> blah
 version: 0.1
